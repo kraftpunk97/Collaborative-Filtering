@@ -40,6 +40,7 @@ for movie in test_df['MovieID'].unique():
 
     # Only considering movies that have been rated by both, active_user and its neighbor.
     active_neighbor_common = (active_user_rating * neighbor_ratings).astype(bool).astype(int)
+    print(active_user_rating.shape)
 
     active_user_rating_means = active_user_rating.mean(axis=2)
     neighbor_rating_means = neighbor_ratings.mean(axis=2)
